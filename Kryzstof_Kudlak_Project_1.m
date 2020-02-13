@@ -65,10 +65,9 @@ plot(1:length(recClose), recClose, '-g');
 xlabel("Time (Days)"); ylabel("Closing Stock Value ($)");
 title("Closing Value vs Time for Red Robin");
 
-for i = 1:3
-    text(i*365,recClose(365*i),strcat("Year ", num2str(i)));
+for i = 0:3
+    text(i*365 + 1,recClose(365*i + 1),strcat("Year ", num2str(i + 1)));
 end
-
 %%
 
 function [] = plotData(arr1, arr2)
