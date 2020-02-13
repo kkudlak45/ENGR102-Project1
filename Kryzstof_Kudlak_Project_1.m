@@ -10,8 +10,9 @@ clc; clear; close all;
 % Define file name, make a library of the companies I need to access
 % and create a cell array for storing data matrices for each tab of the
 % sheet.  Also define metrics for the tables
-file = 'Project 1 Stock Data Spring 2020';
-names = ["NIKE", "Chipotle", "Cracker Barrel", "General Motors", "Cheesecake Factory", "Texas Roadhouse", "Dr. Pepper", "Red Robin"];
+file     = 'Project 1 Stock Data Spring 2020';
+names    = ["NIKE", "Chipotle", "Cracker Barrel", "General Motors", "Cheesecake Factory", "Texas Roadhouse", "Dr. Pepper", "Red Robin"];
+varNames = ["NIKE", "Chipotle", "CrackerBarrel", "GeneralMotors", "CheesecakeFactory", "TexasRoadhouse", "DrPepper", "RedRobin"];
 metrics1 = ["Max Open ($)", "Day", "Max High ($)", "Day", "Max Low ($)", "Day"];
 metrics2 = ["Max Close ($)", "Min Close ($)", "Median Close ($)", "Avg Close ($)", "Std Dev Close ($)"];
 data = cell(1, 8);
@@ -44,8 +45,8 @@ end
 
 % Create a table with the first col showing metrics & variable names as the
 % companies
-T1 = table(metrics1', formattedData1{:}, 'VariableNames', [" ", names]);
-T2 = table(metrics2', formattedData2{:}, 'VariableNames', [" ", names]);
+T1 = table(metrics1', formattedData1{:}, 'VariableNames', ["o", varNames]);
+T2 = table(metrics2', formattedData2{:}, 'VariableNames', ["o", varNames]);
 disp(T1)
 disp(T2)
 
